@@ -1,7 +1,12 @@
 {
-    "name": "connectholland/cookie-consent-bundle",
-    "type": "symfony-bundle",
-    "description": "Symfony bundle for implementing Cookie Consent to comply to AVG/GDPR.",
+    "name": "quentinCharrier/cookie-consent-bundle",
+    "type": "sylius-plugin",
+    "keywords": [
+        "sylius",
+        "sylius-plugin",
+        "sylius-cookie"
+    ],
+    "description": "Sylius bundle for implementing Cookie Consent to comply to AVG/GDPR.",
     "license": "MIT",
     "require": {
         "php": "^7.2",
