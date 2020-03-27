@@ -3,15 +3,15 @@
 [![Build Status](https://scrutinizer-ci.com/g/ConnectHolland/cookie-consent-bundle/badges/build.png?b=master&s=bcccde957df75df8622fa346ba348dee002efebb)](https://scrutinizer-ci.com/g/ConnectHolland/cookie-consent-bundle/build-status/master)
 
 
-# Cookie Consent bundle for Symfony
-Symfony bundle to append Cookie Consent to your website to comply to AVG/GDPR for cookies.
+# Cookie Consent bundle for Sylius
+Sylius bundle to append Cookie Consent to your website to comply to AVG/GDPR for cookies.
 
 ## Installation
 
 ### Step 1: Download using composer
-In a Symfony application run this command to install and integrate Cookie Consent bundle in your application:
+In a Sylius application run this command to install and integrate Cookie Consent bundle in your application:
 ```bash
-composer require connectholland/cookie-consent-bundle
+composer require quentinCharrier/cookie-consent-bundle
 ```
 
 ### Step 2: Enable the bundle
