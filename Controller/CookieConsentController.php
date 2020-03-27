@@ -84,14 +84,14 @@ class CookieConsentController
     }
 
     /**
-     * Show cookie consent.
-     *
+     * Show cookie banner consent.
+     * 
      * @Route("/cookie_consent_alt", name="ch_cookie_consent.show_if_cookie_consent_not_set")
      */
-    public function showIfCookieConsentNotSet(Request $request): Response
+    public function showBannerIfCookieConsentNotSet(Request $request): Response
     {
         if ($this->cookieChecker->isCookieConsentSavedByUser() === false) {
-            return $this->show($request);
+            return new Response($this->twigEnvironment->render('@CHCookieConsent/cookie_banner.html.twig'));
         }
 
         return new Response();

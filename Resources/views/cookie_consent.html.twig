@@ -4,7 +4,7 @@
     <script type="text/javascript" src="{{ asset('bundles/chcookieconsent/js/cookie_consent.js') }}"></script>
 {% endblock %}
 
-<div class="ch-cookie-consent ch-cookie-consent--{{ theme }}-theme ch-cookie-consent--{{ position }}">
+<div class="ui modal ch-cookie-consent ch-cookie-consent--{{ theme }}-theme ch-cookie-consent--{{ position }}">
     {% block title %}
         <h3 class="ch-cookie-consent__title">{{ 'ch_cookie_consent.title'|trans({}, 'CHCookieConsentBundle') }}</h3>
     {% endblock %}
@@ -17,11 +17,13 @@
         <a class="ch-cookie-consent__read-more" href="{% block read_more_link %}/privacy-statement{% endblock %}">{{ 'ch_cookie_consent.read_more'|trans({}, 'CHCookieConsentBundle') }}</a>
     {% endblock %}
 
-    {{ form_start(form, {'attr': {'class': 'ch-cookie-consent__form'}}) }}
+    {{ form_start(form, {'method': 'post', 'action': path('ch_cookie_consent.show'), 'attr': {'class': 'ch-cookie-consent__form'}}) }}
         {{ form_widget(form) }}
 
         {% block submit_button %}
-            <button type="submit" class="btn ch-cookie-consent__btn">{{ 'ch_cookie_consent.save'|trans({}, 'CHCookieConsentBundle') }}</button>
+            <div class="actions">
+                <button type="submit" class="ui approve button btn ch-cookie-consent__btn">{{ 'ch_cookie_consent.save'|trans({}, 'CHCookieConsentBundle') }}</button>
+            </div>
         {% endblock %}
     {{ form_end(form) }}
 
