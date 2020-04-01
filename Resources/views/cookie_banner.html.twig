@@ -1,7 +1,7 @@
 <div class="ui visible message cookie">
 	<div class='ui grid'>
 		<span class="header">
-			We use cookies to understand how you use our site and to improve your experience <br>and offer functionnalities. To accept or manage the use of cookies click on 'Setting'
+			{{ 'ch_cookie_consent.intro'|trans({}, 'CHCookieConsentBundle') }}
 		</span>
 	  	<div class="actions">
 	  		<div id="settingCookieConsent" href="javascript:void(0);" onclick="$('.ui.modal.ch-cookie-consent').modal('show');" class="ui button close">Settings</div>

@@ -4,27 +4,31 @@
     <script type="text/javascript" src="{{ asset('bundles/chcookieconsent/js/cookie_consent.js') }}"></script>
 {% endblock %}
 
-<div class="ui modal ch-cookie-consent ch-cookie-consent--{{ theme }}-theme ch-cookie-consent--{{ position }}">
-    {% block title %}
-        <h3 class="ch-cookie-consent__title">{{ 'ch_cookie_consent.title'|trans({}, 'CHCookieConsentBundle') }}</h3>
-    {% endblock %}
-
-    {% block intro %}
-        <p class="ch-cookie-consent__intro">{{ 'ch_cookie_consent.intro'|trans({}, 'CHCookieConsentBundle') }}</p>
-    {% endblock %}
-
-    {% block read_more %}
-        <a class="ch-cookie-consent__read-more" href="{% block read_more_link %}/privacy-statement{% endblock %}">{{ 'ch_cookie_consent.read_more'|trans({}, 'CHCookieConsentBundle') }}</a>
-    {% endblock %}
-
-    {{ form_start(form, {'method': 'post', 'action': path('ch_cookie_consent.show'), 'attr': {'class': 'ch-cookie-consent__form'}}) }}
-        {{ form_widget(form) }}
-
-        {% block submit_button %}
-            <div class="actions">
-                <button type="submit" class="ui approve button btn ch-cookie-consent__btn">{{ 'ch_cookie_consent.save'|trans({}, 'CHCookieConsentBundle') }}</button>
-            </div>
+<div class="ui modal transition ch-cookie-consent ch-cookie-consent ch-cookie-consent--{{ theme }}-theme">
+    
+    <div class="header">
+        {% block title %}
+            {{ 'ch_cookie_consent.title'|trans({}, 'CHCookieConsentBundle') }}
         {% endblock %}
-    {{ form_end(form) }}
+    </div>
 
+    <div class="content">
+        {% block intro %}
+            <p class="">{{ 'ch_cookie_consent.intro'|trans({}, 'CHCookieConsentBundle') }}
+                {% block read_more %}
+                    <a class="" href="{% block read_more_link %}/privacy-statement{% endblock %}">{{ 'ch_cookie_consent.read_more'|trans({}, 'CHCookieConsentBundle') }}</a>
+                {% endblock %}
+            </p>
+        {% endblock %}
+        
+        {{ form_start(form, {'method': 'post', 'action': path('ch_cookie_consent.show'), 'attr': {'class': 'ch-cookie-consent__form'}}) }}
+            {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    {% block submit_button %}
+        <div class="actions">
+            <button type="submit" class="ui positive button btn ch-cookie-consent__btn">{{ 'ch_cookie_consent.save'|trans({}, 'CHCookieConsentBundle') }}</button>
+        </div>
+    {% endblock %}
 </div>
+    

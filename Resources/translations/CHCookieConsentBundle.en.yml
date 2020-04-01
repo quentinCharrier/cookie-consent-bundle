@@ -1,6 +1,6 @@
 ch_cookie_consent:
     title: 'Cookies on our website.'
-    intro: ''
+    intro: 'We use cookies to understand how you use our site and to improve your experience and offer functionnalities. To accept or manage the use of cookies click on Setting'
     read_more: 'read more about this'
     analytics:
         title: 'Do you want analytical cookies?'

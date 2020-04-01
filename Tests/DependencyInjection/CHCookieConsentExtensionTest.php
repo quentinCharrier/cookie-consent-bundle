@@ -38,7 +38,6 @@ class CHCookieConsentExtensionTest extends TestCase
 
         $this->assertParameter(['analytics', 'tracking', 'marketing', 'social_media'], 'ch_cookie_consent.categories');
         $this->assertParameter('dark', 'ch_cookie_consent.theme');
-        $this->assertParameter('top', 'ch_cookie_consent.position');
     }
 
     /**
@@ -67,7 +66,6 @@ class CHCookieConsentExtensionTest extends TestCase
         $yaml = <<<EOF
 categories: ['analytics', 'tracking', 'marketing', 'social_media']
 theme: 'dark'
-position: 'top'
 EOF;
         $parser = new Parser();
 

@@ -49,14 +49,19 @@ ch_cookie_consent:
         - 'marketing'
         - 'social_media'
     use_logger: true # Logs user actions to database
-    position: 'top' # top, bottom
 ```
 
 ## Usage
 ### Twig implementation
 Load the cookie consent in Twig via render_esi ( to prevent caching ) at any place you like:
+
+1. Template : Render the consent modal with the form to select the cookie category allowed or not
 ```twig
 {{ render_esi(path('ch_cookie_consent.show')) }}
+```
+
+2. Template : Render the notification banner if the cookie isn't allready set.
+```twig
 {{ render_esi(path('ch_cookie_consent.show_if_cookie_consent_not_set')) }}
 ```
 

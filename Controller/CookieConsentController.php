@@ -41,9 +41,6 @@ class CookieConsentController
      */
     private $cookieConsentTheme;
 
-    /** @var string */
-    private $cookieConsentPosition;
-
     /**
      * @var TranslatorInterface
      */
@@ -54,14 +51,12 @@ class CookieConsentController
         FormFactoryInterface $formFactory,
         CookieChecker $cookieChecker,
         string $cookieConsentTheme,
-        string $cookieConsentPosition,
         TranslatorInterface $translator
     ) {
         $this->twigEnvironment       = $twigEnvironment;
         $this->formFactory           = $formFactory;
         $this->cookieChecker         = $cookieChecker;
         $this->cookieConsentTheme    = $cookieConsentTheme;
-        $this->cookieConsentPosition = $cookieConsentPosition;
         $this->translator            = $translator;
     }
 
@@ -78,7 +73,6 @@ class CookieConsentController
             $this->twigEnvironment->render('@CHCookieConsent/cookie_consent.html.twig', [
                 'form'     => $this->createCookieConsentForm()->createView(),
                 'theme'    => $this->cookieConsentTheme,
-                'position' => $this->cookieConsentPosition,
             ])
         );
     }

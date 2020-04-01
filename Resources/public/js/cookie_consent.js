@@ -2,23 +2,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var cookieConsent = document.getElementsByClassName('ch-cookie-consent')[0];
     var cookieConsentForm = document.getElementsByClassName('ch-cookie-consent__form')[0];
 
-    // If cookie consent is direct child of body, assume it should be placed on top of the site pushing down the rest of the website
-    if (cookieConsent && cookieConsent.parentNode.nodeName === 'BODY') {
-        if (cookieConsent.classList.contains('ch-cookie-consent--top')) {
-            document.body.style.marginTop = cookieConsent.offsetHeight + 'px';
-
-            cookieConsent.style.position = 'absolute';
-            cookieConsent.style.top = '0';
-            cookieConsent.style.left = '0';
-        } else {
-            document.body.style.marginBottom = cookieConsent.offsetHeight + 'px';
-
-            cookieConsent.style.position = 'fixed';
-            cookieConsent.style.bottom = '0';
-            cookieConsent.style.left = '0';
-        }
-    }
-
     if (cookieConsentForm) {
         // Submit form via ajax
         document.addEventListener('click', function (event) {
@@ -42,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function serializeForm(form) {
-	var serialized = [];
+    var serialized = [];
 
-	for (var i = 0; i < form.elements.length; i++) {
+    for (var i = 0; i < form.elements.length; i++) {
         var field = form.elements[i];
 
         if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
