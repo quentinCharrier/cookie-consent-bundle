@@ -118,7 +118,7 @@ CHCookieConsentBundle comes with a default styling. A sass file is available in 
 
 To install these assets run:
 ```bash
-php bin/console sylius:assets:install
+php bin/console assets:install
 ```
 
 To install theme assets run:
