@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     var cookieConsent = document.getElementsByClassName('ch-cookie-consent')[0];
     var cookieConsentForm = document.getElementsByClassName('ch-cookie-consent__form')[0];
+    var cookieConsentFormBtn = document.getElementsByClassName('ch-cookie-consent__btn')[0];
 
     if (cookieConsentForm) {
         // Submit form via ajax
-        document.addEventListener('click', function (event) {
-            if (event.target.matches('.ch-cookie-consent__btn') === false) {
-                return;
-            }
-
+        cookieConsentFormBtn.addEventListener('click', function (event) {
             event.preventDefault();
 
             var xhr = new XMLHttpRequest();
