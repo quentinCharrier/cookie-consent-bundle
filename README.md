@@ -60,6 +60,15 @@ twig:
         path_to_cookie_policy: '/cookie-policy' # to change to your custom path
 ```
 
+### Step 5: Add cookie policy path
+Configure the path to your cookie policy page
+```yaml
+# app/config/twig.yml
+twig:    
+    globals:
+        path_to_cookie_policy: '/cookie-policy' # to change to your custom path
+```
+
 ## Usage
 ### Twig implementation
 Load the cookie consent in Twig via render_esi ( to prevent caching ) at any place you like:
