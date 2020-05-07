@@ -16,7 +16,7 @@
         {% block intro %}
             <p class="">{{ 'ch_cookie_consent.intro'|trans({}, 'CHCookieConsentBundle') }}
                 {% block read_more %}
-                    <a class="" href="{% block read_more_link %}/privacy-statement{% endblock %}">{{ 'ch_cookie_consent.read_more'|trans({}, 'CHCookieConsentBundle') }}</a>
+                    <a class="" href="{% block read_more_link %}{{ path_to_cookie_policy }}{% endblock %}">{{ 'ch_cookie_consent.read_more'|trans({}, 'CHCookieConsentBundle') }}</a>
                 {% endblock %}
             </p>
         {% endblock %}
